@@ -50,13 +50,13 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 * In Question 1, you will play with simple linear and quadratic data (x-axis is the feature variable; y-axis is the real-value label; each point is a data instance: red for training and blue for testing) and some other more complicated data.
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_1_programming_set/HW_1_programming/for_display/linear_1.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/linear_1.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_1_programming_set/HW_1_programming/for_display/quadratic_2.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/quadratic_2.png)
 
 * In Question 2, you will play with the MNIST dataset (digit data).
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_1_programming_set/HW_1_programming/for_display/Digits.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/main/HW_1_programming_set/HW_1_programming/for_display/Digits.png)
 
 
 
