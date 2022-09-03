@@ -23,7 +23,7 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will see a folder `for_display`, which simply contains some images used for display here.
 
-* Please use python3 and write your own solutions from scratch. 
+* Please use python3 and write your own solutions from scratch. (You must use python3.)
 
 * **Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
 
@@ -94,7 +94,7 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 You have two parts to implement in `Regression.py`:
 
-* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. Note that, `1` has not been appended into `X`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
+* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. Please note that `1` has not been appended into `X`. 1. If you want to apply the closed-form solution directly, you have to append `1` into your data `X` (for every column). You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
 
 * The decision of which polynomial degree to use via the validation process: please go to `def main(args)`. You are to implement your code between `### Your job 2 starts here ###` and and `### Your job 2 ends here ###`. You will see some instructions there. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement them.
 
@@ -160,6 +160,10 @@ These commands will select for each data the corresponding best polynomial degre
 * You will implement KNN for "binary" classification in this question. The data are images of digits 1 and 8. You are to amend your implementation into `KNN.py`.
 
 * There are many sub-functions in `KNN.py`. You can ignore all of them but `def distance(x_test, x_train, dis_metric)`, `def KNN(x_test, X, Y, K, dis_metric)`, and `def main(args)`. In `main(args)`, you are to implement the leave-one-out cross-validation to find the `best_dis_metric` from ["L1", "L2", "cosine"], the `best_K` from [1, 3, 5, 7, 9, 11, 13, 15, 17], and the corresponding `best_val_accuracy` and `test_accuracy`.<br/>
+
+* The accuracy is "average 1[y_n = predict_y_n]". That is, when an example is correctly classified, you get 1; otherwise, 0. You then average this over all data.
+
+The data X is in the column form: i.e., a column is a data instance.
   
 ## Coding (15/20 pts):
 
