@@ -251,7 +251,7 @@ Please discuss what you observe from these experiments.
 
 
 
-# Question 3: GDA nonlinear classifier (15 pts)
+# Question 3: GDA nonlinear classifier (10 pts)
 
 * You will implement the GDA algorithm for nonlinear classification in this question. You are to amend your implementation into `Classification.py`.
 
@@ -261,7 +261,7 @@ Please discuss what you observe from these experiments.
 
 * ** In `def GDA_nonlinear_model_accuracy`, you are to implement the classification rule of GDA and calculate the accuracy on a data set.
   
-## Coding (10/15 pts):
+## Coding (5/10 pts):
 
 You have two parts to implement:
 
@@ -271,7 +271,7 @@ You have two parts to implement:
 
 * **Please read `HW2.pdf` and `HW2.ppt` for what training process/objective we want you to implement/minimize.**
 
-## Play with different datasets (5/15 pts):
+## Play with different datasets (5/10 pts):
 
 * Please run the following commands<br/>
 `python3 Classification.py --algorithm GDA_nonlinear --data linear --feature linear`<br/>
