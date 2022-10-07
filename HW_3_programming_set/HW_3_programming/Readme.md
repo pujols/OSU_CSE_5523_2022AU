@@ -75,7 +75,7 @@ In this homework, you are to implement several binary classification algorithms,
 
 
 
-# Question 1: Logistic regression (20 pts)
+# Question 1: Logistic regression (15 pts)
 
 * You will implement logistic regression (using MLE) in this question. You are to amend your implementation into `Classification.py`.
 
@@ -95,7 +95,7 @@ In this homework, you are to implement several binary classification algorithms,
 
 * **You will see a similar code structure for other questions!**
   
-## Coding (10/20 pts):
+## Coding (10/15 pts):
 
 You have one part to implement:
 
@@ -103,7 +103,7 @@ You have one part to implement:
 
 * **Please read `HW3.pdf` and `HW3.ppt` for what training objective we want you to minimize.**
 
-## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+## Play with different datasets (Task 1 - linear testing, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
@@ -115,7 +115,7 @@ This command will run logistic regression on 2D linear data. You will see the tr
 
 * You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not converge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not converge.
 
-## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+## Play with different datasets (Task 2 - quadratic data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
@@ -135,7 +135,7 @@ This command will first perform a feature transform with polynomial degree 2 (se
 
 * You may again play with a different learning rate (step_size) and the number of iterations.
 
-## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+## Play with different datasets (Task 3 -noisy linear data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
@@ -147,7 +147,7 @@ This command will run logistic regression on 2D noisy linear data. You will see 
 
 * You may again play with a different learning rate (step_size) and the number of iterations, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve the accuracy?
 
-## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+## Play with different datasets (Task 4 - mnist data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
@@ -159,7 +159,7 @@ This command will run logistic regression on mnist data for binary classificatio
 
 * You may again play with a different learning rate (step_size) and the number of iterations. Please do NOT do `--feature quadratic`.
 
-## Discussion (Task 5, 2/20 pts):
+## Discussion (Task 5, 1/15 pts):
 
 Please discuss what you observe from these experiments. You may additionally discuss what you find from changing the hyper-parameters.
 
@@ -169,7 +169,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
-# Question 2: Soft-margin SVM algorithm (20 pts)
+# Question 2: Soft-margin SVM algorithm (15 pts)
 
 * You will implement the soft-margin SVM (with the hinge loss, so unconstrained) in this question. You are to amend your implementation into `Classification.py`.
 
@@ -177,7 +177,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 * In `def SVM_train`, you are to implement the training process of the soft-margin SVM, using gradient descent. 
   
-## Coding (10/20 pts):
+## Coding (10/15 pts):
 
 You have one part to implement:
 
@@ -185,7 +185,7 @@ You have one part to implement:
 
 * **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
-## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+## Play with different datasets (Task 1 - linear testing, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
@@ -199,7 +199,7 @@ This command will run the algorithm on 2D linear data. You will see the training
 
 * **You may additionally change the regularization coefficient (see the slide) `--reg_coeff 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with a too-large reg_coeff, the algorithm will underfit (i.e., get low training and test accuracies).
 
-## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+## Play with different datasets (Task 2 - quadratic data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data quadratic --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
@@ -219,7 +219,7 @@ This command will first perform a feature transform with polynomial degree 2 (se
 
 * You may again play with a different learning rate (step_size), the number of iterations, and the regularization coefficient.
 
-## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+## Play with different datasets (Task 3 -noisy linear data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
@@ -231,7 +231,7 @@ This command will run the algorithm on 2D noisy linear data. You will see the tr
 
 * You may again play with a different learning rate (step_size), the number of iterations, regularization coefficient, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
 
-## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+## Play with different datasets (Task 4 - mnist data, 1/15 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data mnist --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.0`<br/>
@@ -243,7 +243,7 @@ This command will run the algorithm on mnist data for binary classification. You
 
 * You may again play with a different learning rate (step_size), the number of iterations, and the regularization coefficient. Please do NOT do `--feature quadratic`.
 
-## Discussion (Task 5, 2/20 pts):
+## Discussion (Task 5, 1/15 pts):
 
 Please discuss what you observe from these experiments. You may additionally discuss what you find from changing the hyper-parameters.
 
@@ -253,7 +253,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
-# Question 3: Naive Bayes linear classifier (20 pts)
+# Question 3: Naive Bayes linear classifier (10 pts)
 
 * You will implement the Naive Bayes algorithm for linear classification in this question. You are to amend your implementation into `Classification.py`.
 
@@ -263,7 +263,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 * ** In `def NB_linear_model_accuracy`, you are to implement the classification rule of Naive Bayes and calculate the accuracy on a data set.
   
-## Coding (10/20 pts):
+## Coding (5/10 pts):
 
 You have two parts to implement:
 
@@ -273,7 +273,7 @@ You have two parts to implement:
 
 * **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
-## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+## Play with different datasets (Task 1 - linear testing, 1/10 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data linear --feature linear`<br/>
@@ -283,7 +283,7 @@ This command will run the algorithm on 2D linear data. You will see the training
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+## Play with different datasets (Task 2 - quadratic data, 1/10 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data quadratic --feature linear`<br/>
@@ -301,7 +301,7 @@ This command will first perform a feature transform with polynomial degree 2 (se
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+## Play with different datasets (Task 3 -noisy linear data, 1/10 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data noisy_linear --feature linear`<br/>
@@ -313,7 +313,7 @@ This command will run the algorithm on 2D noisy linear data. You will see the tr
 
 * Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
 
-## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+## Play with different datasets (Task 4 - mnist data, 1/10 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data mnist --feature linear`<br/>
@@ -325,7 +325,7 @@ This command will run the algorithm on mnist data for binary classification. You
 
 * Please do NOT do `--feature quadratic`.
 
-## Discussion (Task 5, 2/20 pts):
+## Discussion (Task 5, 1/10 pts):
 
 Please discuss what you observe from these experiments.
 
@@ -345,7 +345,7 @@ Please discuss what you observe from these experiments.
 
 * ** In `def NB_nonlinear_model_accuracy`, you are to implement the classification rule of Naive Bayes and calculate the accuracy on a data set.
   
-## Coding (10/15 pts):
+## Coding (5/10 pts):
 
 You have two parts to implement:
 
@@ -355,7 +355,7 @@ You have two parts to implement:
 
 * **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
-## Play with different datasets and discuss (5/15 pts):
+## Play with different datasets and discuss (5/10 pts):
 
 * Please run the following commands<br/>
 `python3 Classification.py --algorithm NB_nonlinear --data linear --feature linear`<br/>
