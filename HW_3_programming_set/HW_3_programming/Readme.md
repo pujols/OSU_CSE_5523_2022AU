@@ -79,10 +79,10 @@ In this homework, you are to implement several binary classification algorithms,
 
 * You will implement logistic regression (using MLE) in this question. You are to amend your implementation into `Classification.py`.
 
-* There are many sub-functions in `Classification.py`. You can ignore all of them but `def logistic_train`, `def linear_model_accuracy`, `def main` and `def sigmoid`. 
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def logistic_train`, `def linear_model_accuracy`, `def main`, and `def sigmoid`. 
 
 * In `main`, you will see a general pipeline of machine learning: <br/>
-  - Loading data: `X_train, Y_train, X_val, Y_val, X_test, Y_test = data_loader(args)`, in which each `X` is a D-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
+  - Loading data: `X_train, Y_train, X_val, Y_val, X_test, Y_test = data_loader(args)`, in which each `X` is a D-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
   - Initialize the parameters
   - Learning patterns: `w, b = logistic_train(X_train, Y_train, w, b, step_size=step_size, max_iterations=max_iterations)`, in which the code takes `X_train` and the desired labels `Y_train` as input and output the weights `w` and the bias `b`.
   - Apply the learned patterns to the data: `training_accuracy = linear_model_accuracy(X_train, Y_train, w, b)`, `validation_accuracy = linear_model_accuracy(X_val, Y_val, w, b)`, and `test_accuracy = linear_model_accuracy(X_test, Y_test, w, b)` to compute the training, validation, and test error.
@@ -93,33 +93,33 @@ In this homework, you are to implement several binary classification algorithms,
 
 * `def sigmoid` implements the sigmoid function.
 
-* **You will see similar code structure for other questions!**
+* **You will see a similar code structure for other questions!**
   
 ## Coding (10/20 pts):
 
 You have one part to implement:
 
-* The function `def logistic_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def logistic_train`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training objective we want you to minimize.**
+* **Please read `HW3.pdf` and `HW3.ppt` for what training objective we want you to minimize.**
 
 ## Play with different datasets (Task 1 - linear testing, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run logistic regression on 2D linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not converge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not converge.
 
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run logistic regression on 2D quadratic data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.66.
 
@@ -127,37 +127,37 @@ This command will run logistic regression on 2D quadratic data. You will see the
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
-This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running logistic regression. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running logistic regression. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.96.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations.
+* You may again play with a different learning rate (step_size) and the number of iterations.
 
 ## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run logistic regression on 2D noisy linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.85.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve the accuracy?
+* You may again play with a different learning rate (step_size) and the number of iterations, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve the accuracy?
 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm logistic --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run logistic regression on mnist data for binary classification. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.84.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations. Please do NOT do `--feature quadratic`.
+* You may again play with a different learning rate (step_size) and the number of iterations. Please do NOT do `--feature quadratic`.
 
 ## Discussion (Task 5, 2/20 pts):
 
@@ -169,7 +169,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
-# Question 3: Soft-margin SVM algorithm (20 pts)
+# Question 2: Soft-margin SVM algorithm (20 pts)
 
 * You will implement the soft-margin SVM (with the hinge loss, so unconstrained) in this question. You are to amend your implementation into `Classification.py`.
 
@@ -181,29 +181,29 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 You have one part to implement:
 
-* The function `def SVM_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q3 starts here ###` and `### Your job Q3 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def SVM_train`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q3 starts here ###` and `### Your job Q3 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+* **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
 ## Play with different datasets (Task 1 - linear testing, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
-This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not converge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not converge.
 
-* **You may additionally change the regularization coefficient (see the slide) `--reg_coeff 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with a too large reg_coeff, the algorithm will underfit (i.e., get low training and test accuracies).
+* **You may additionally change the regularization coefficient (see the slide) `--reg_coeff 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with a too-large reg_coeff, the algorithm will underfit (i.e., get low training and test accuracies).
 
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data quadratic --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
-This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.52.
 
@@ -211,37 +211,37 @@ This command will run the algorithm on 2D quadratic data. You will see the train
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500 --reg_coeff 0.001`<br/>
-This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.97.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size), number of iterations, and regularization coefficient.
+* You may again play with a different learning rate (step_size), the number of iterations, and the regularization coefficient.
 
 ## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
-This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to "1".
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size), number of iterations, regularization coefficient, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
+* You may again play with a different learning rate (step_size), the number of iterations, regularization coefficient, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm SVM --data mnist --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.0`<br/>
-This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.84.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size), number of iterations, and regularization coefficient. Please do NOT do `--feature quadratic`.
+* You may again play with a different learning rate (step_size), the number of iterations, and the regularization coefficient. Please do NOT do `--feature quadratic`.
 
 ## Discussion (Task 5, 2/20 pts):
 
@@ -253,7 +253,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
-# Question 4: Naive Bayes linear classifier (20 pts)
+# Question 3: Naive Bayes linear classifier (20 pts)
 
 * You will implement the Naive Bayes algorithm for linear classification in this question. You are to amend your implementation into `Classification.py`.
 
@@ -267,17 +267,17 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 You have two parts to implement:
 
-* The function `def NB_linear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a linear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q4.1 starts here ###` and `### Your job Q4.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def NB_linear_train`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a linear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q4.1 starts here ###` and `### Your job Q4.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* The function `def NB_linear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q4.2 starts here ###` and `### Your job Q4.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def NB_linear_model_accuracy`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q4.2 starts here ###` and `### Your job Q4.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+* **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
 ## Play with different datasets (Task 1 - linear testing, 2/20 pts):
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data linear --feature linear`<br/>
-This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
@@ -287,7 +287,7 @@ This command will run the algorithm on 2D linear data. You will see the training
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data quadratic --feature linear`<br/>
-This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.66.
 
@@ -295,7 +295,7 @@ This command will run the algorithm on 2D quadratic data. You will see the train
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data quadratic --feature quadratic`<br/>
-This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.95.
 
@@ -305,7 +305,7 @@ This command will first perform a feature transform with polynomial degree 2 (se
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data noisy_linear --feature linear`<br/>
-This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.95.
 
@@ -317,7 +317,7 @@ This command will run the algorithm on 2D noisy linear data. You will see the tr
 
 * Please run the following command<br/>
 `python3 Classification.py --algorithm NB_linear --data mnist --feature linear`<br/>
-This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 0.75.
 
@@ -335,7 +335,7 @@ Please discuss what you observe from these experiments.
 
 
 
-# Question 6: Naive Bayes nonlinear classifier (15 pts)
+# Question 4: Naive Bayes nonlinear classifier (10 pts)
 
 * You will implement the Naive Bayes algorithm for nonlinear classification in this question. You are to amend your implementation into `Classification.py`.
 
@@ -349,11 +349,11 @@ Please discuss what you observe from these experiments.
 
 You have two parts to implement:
 
-* The function `def NB_nonlinear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a nonlinear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q6.1 starts here ###` and `### Your job Q6.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def NB_nonlinear_train`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a nonlinear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q6.1 starts here ###` and `### Your job Q6.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
 * The function `def NB_nonlinear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q6.2 starts here ###` and `### Your job Q6.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+* **Please read `HW3.pdf` and `HW3.ppt` for what training process/objective we want you to implement/minimize.**
 
 ## Play with different datasets and discuss (5/15 pts):
 
@@ -375,7 +375,7 @@ Please discuss what you observe from these experiments.
 
 # What to submit:
 
-* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not to be graded.
+* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not be graded.
 
 
 
@@ -383,4 +383,4 @@ Please discuss what you observe from these experiments.
 
 # What to report in `name.number.pdf`
 
-* For Question 1-4, please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
+* For Questions 1-4, please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
