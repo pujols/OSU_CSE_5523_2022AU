@@ -1,39 +1,39 @@
-# Homework 4
+# Homework 5
 
 ## Submission instructions
 
-* Due date and time: March 16st (Friday), 11:59 pm ET
+* Due date and time: November 22st (Tuesday), 11:59 pm ET
 
 * Carmen submission: 
 Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
   - your completed python script `Adaboost.py`
   - your report in a PDF named `name.number.pdf` (see details below)
 
-* Collaboration: You may discuss the homework with your classmates. However, you need to write your own solutions, complete your own .py files, and submit them separately. In your submission, you need to list with whom you have discussed the homework. Please list each classmate’s name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `Adaboost.py`. That is, if you discussed with two classmates, your .py file will have two rows. Please consult the syllabus for what is and is not acceptable collaboration.
+* Collaboration: You may discuss the homework with your classmates. However, you need to write your solutions, complete your .py files, and submit them by yourself. In your submission, you need to list with whom you have discussed the homework. Please list each classmate’s name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `Adaboost.py`. That is, if you discussed the homework with two classmates, your .py file will have two rows. Please consult the syllabus for what is and is not acceptable collaboration.
 
 ## Implementation instructions
 
 * Download or clone this repository.
 
-* You will see one python scripts: `Adaboost.py`
+* You will see one python script: `Adaboost.py`
 
 * You will see a `data` folder, which contains `Linear.npz`, `Linear_Linear.npz`, `Quadratic.npz`, and `permutation.npz`.
 
 * You will see a folder `for_display`, which simply contains some images used for display here.
 
-* You can find the algorithm in your HW # 4 Problem set, Section 3. I will talk more about it in the lecture of 4/6. Please see the lecture slide deck 22 for some more details of the implementation.
+* You can find the algorithm in your HW # 5 Problem set, Section 1 (i.e., Q1). Please see the lecture slide deck 20 for some more details on the implementation.
 
-* Please use python3 and write your own solutions from scratch. 
+* Please use python3 and write your solutions from scratch. 
 
-* **Caution! python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
+* **Caution! Python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**
 
-* Please note that, the provided commands are designed to work with Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
+* Please note that the provided commands are designed to work with Mac/Linux with Python version 3. If you use Windows (like me!), we recommend that you run the code in the Windows command line (CMD). You may use `py -3` instead of `python3` to run the code. You may use editors like PyCharm to write your code.
 
 * Caution! Please do not import packages (like scikit learn) that are not listed in the provided code. Follow the instructions in each question strictly to code up your solutions. Do not change the output format. Do not modify the code unless we instruct you to do so. (You are free to play with the code but your submitted code should not contain those changes that we do not ask you to do.) A homework solution that does not match the provided setup, such as format, name, initializations, etc., will not be graded. It is your responsibility to make sure that your code runs with the provided commands and scripts.
 
 ## Installation instructions
 
-* You will be using [NumPy] (https://numpy.org/), and your code will display your results with [matplotlib] (https://matplotlib.org/). If your computer does not have them, you may install with the following commands:
+* You will be using [NumPy] (https://numpy.org/), and your code will display your results with [matplotlib] (https://matplotlib.org/). If your computer does not have them, you may install them with the following commands:
   - for NumPy: <br/>
     do `sudo apt install python3-pip` or `pip3 install numpy`. If your are using Windows command line, you may try `setx PATH "%PATH%;C:\Python34\Scripts"`, followed by `py -3 -mpip install numpy`.
 
@@ -46,15 +46,15 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 # Introduction
 
-In this homework, you are to implement the Adaboost algorithm for binary classfication, and apply your completed algorithm to multiple different datasets to see their pros and cons.
+In this homework, you are going to implement the Adaboost algorithm for binary classification, and apply your completed algorithm to multiple different datasets to see their pros and cons.
 
 * You will play with simple linear and quadratic data that are separable by a linear boundary or circle (each point is a data instance: red and blue for different classes) and noisy linear data whose training data are generated by a linear boundary with some noise (so not linearly separable).
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_2+3_programming_set/HW_2+3_programming/for_display/linear.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_5_programming_set/HW_5_programming/for_display/linear.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_2+3_programming_set/HW_2+3_programming/for_display/quadratic.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_5_programming_set/HW_5_programming/for_display/quadratic.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_2+3_programming_set/HW_2+3_programming/for_display/noisy_linear.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2022AU/blob/master/HW_5_programming_set/HW_5_programming/for_display/noisy_linear.png)
 
 
 
@@ -62,9 +62,8 @@ In this homework, you are to implement the Adaboost algorithm for binary classfi
 
 # Question 0: Read the instructions (0 pts)
 
-* Please first complete HW # 4 Problem set, Section 3.
-* I will talk more about Adaboost in the lecture of 4/6.
-* Please see the lecture slide deck 22 for some more details of the implementation.
+* Please first complete HW # 5 Problem set, Section 1 (i.e., Q1).
+* Please see the lecture slide deck 20 for some more details of the implementation.
 
 
 
@@ -74,11 +73,11 @@ In this homework, you are to implement the Adaboost algorithm for binary classfi
 
 * You will implement Adaboost in this question. You are to amend your implementation into `Adaboost.py`.
 
-* There are many sub-functions in `Adaboost.py`. You can ignore all of them but `def adaboost_train`, `def adaboost_accuracy`, and `def main`. The data used in this homework is the same as HW2+3.
+* There are many sub-functions in `Adaboost.py`. You can ignore all of them but `def adaboost_train`, `def adaboost_accuracy`, and `def main`. The data used in this homework is the same as HW2 and HW3.
 
 * In `main`, you will see a general pipeline of machine learning: <br/>
   - Loading data: `X_train, Y_train, X_val, Y_val, X_test, Y_test = data_loader(args)`, in which each `X` is a D-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
-  - Learning patterns: `F = adaboost_train(X_train, Y_train, max_iterations=max_iterations)`, in which the code takes `X_train` and the desired labels `Y_train` as input and output the Adaboost classifier recorded in `F`.
+  - Learning patterns: `F = adaboost_train(X_train, Y_train, max_iterations=max_iterations)`, in which the code takes `X_train` and the desired labels `Y_train` as input and outputs the Adaboost classifier recorded in `F`.
   - Apply the learned patterns to the data: `training_accuracy = adaboost_accuracy(X_train, Y_train, F)`, `validation_accuracy = adaboost_accuracy(X_val, Y_val, F)`, and `test_accuracy = adaboost_accuracy(X_test, Y_test, F)` to compute the training, validation, and test accuracy.
 
 * In `def adaboost_train`, you are to implement the training process of Adaboost, using decision stumps as the base classifiers.
@@ -89,15 +88,15 @@ In this homework, you are to implement the Adaboost algorithm for binary classfi
 
 You have two parts to implement:
 
-* The function `def adaboost_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate `F` that saves the adaboost classifier. Here is a question to you: what do you need to store? You can use whatever data structure you like for `F`. For example, I save the classifier parameters by a Numpy array. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement. Note that, there is no need to appended `1` into `X`.
+* The function `def adaboost_train`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate `F` that saves the adaboost classifier. Here is a question for you: what do you need to store? You can use whatever data structure you like for `F`. For example, I save the classifier parameters by a Numpy array. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement. Note that, there is no need to append `1` into `X`.
 
-* The function `def adaboost_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format (including the data structure you use for `F`), and your goal is to compute the prediction accuracy (between 0 and 1). Please make sure that you implement the decision rule of Adaboost right, using the parameters saved in `F`. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement. 
+* The function `def adaboost_accuracy`: please go to the function and read the input format, output format, and instructions carefully. You can assume that the actual inputs will follow the input format (including the data structure you use for `F`), and your goal is to compute the prediction accuracy (between 0 and 1). Please make sure that you implement the decision rule of Adaboost right, using the parameters saved in `F`. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement. 
 
 ## Play with different datasets (Task 1 - linear testing, 2/50 pts): 
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data linear --feature linear --max_iterations 100`<br/>
-This command will run Adaboost on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run Adaboost on 2D linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
@@ -109,13 +108,13 @@ This command will run Adaboost on 2D linear data. You will see the training, val
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data quadratic --feature linear --max_iterations 100`<br/>
-This command will run Adaboost on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run Adaboost on 2D quadratic data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data quadratic --feature quadratic --max_iterations 100`<br/>
-This command will first perform a feature transform with polynomial degree 2 on 2D quadratic data before running Adaboost. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will first perform a feature transform with polynomial degree 2 on 2D quadratic data before running Adaboost. You will see the training, validation, and test accuracy displayed in your command line.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -125,7 +124,7 @@ This command will first perform a feature transform with polynomial degree 2 on 
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data noisy_linear --feature linear --max_iterations 100`<br/>
-This command will run Adaboost on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+This command will run Adaboost on 2D noisy linear data. You will see the training, validation, and test accuracy displayed in your command line.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -141,7 +140,7 @@ Please discuss what you observe from these experiments, including what you find 
 
 # What to submit:
 
-* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not to be graded.
+* Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not be graded.
 
 
 
@@ -149,4 +148,4 @@ Please discuss what you observe from these experiments, including what you find 
 
 # What to report in `name.number.pdf`
 
-* For Question 1, please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
+* Please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
